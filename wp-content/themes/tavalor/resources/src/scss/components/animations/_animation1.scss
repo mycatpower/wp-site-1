@@ -1,0 +1,433 @@
+@mixin animationLine ($name, $startX, $startY, $endX, $endY) {
+  @keyframes #{$name} {
+    0% {
+      //x: $startX;
+      //y: $startY;
+      transform: translate($startX * 1px, $startY * 1px);
+      opacity: 1;
+    }
+    100% {
+      //x: $endX;
+      //y: $endY;
+      transform: translate($endX * 1px, $endY * 1px);
+      opacity: 1;
+    }
+  }
+}
+
+@mixin animationOpacity ($name) {
+  @keyframes #{$name} {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+}
+
+$dollar-speed: 4s; //1000
+
+
+.animation-1 {
+
+  svg {
+    overflow: visible;
+  }
+
+  .animation-t-b {
+    @keyframes animation-t-b {
+      0% {
+        transform: translateY(0px);
+      }
+      18% {
+        transform: translateY(-100px);
+      }
+      72% {
+        transform: translateY(200px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    $animation-t-b-speed: 10s;
+
+    -webkit-animation: animation-t-b $animation-t-b-speed infinite linear; /* Safari 4+ */
+    -moz-animation:    animation-t-b $animation-t-b-speed infinite linear; /* Fx 5+ */
+    -o-animation:      animation-t-b $animation-t-b-speed infinite linear; /* Opera 12+ */
+    animation:         animation-t-b $animation-t-b-speed infinite linear; /* IE 10+, Fx 29+ */
+  }
+
+  .dollars {
+    .dollar {
+      opacity: 0;
+    }
+
+    .dollar-0-6 {
+      @include animationLine(dollar-0-6, 1783, 1000, 1783, 2500);
+
+      $dollar-speed: 1500 / 1000 * $dollar-speed;
+
+      -webkit-animation: dollar-0-6 $dollar-speed infinite linear; /* Safari 4+ */
+      -moz-animation:    dollar-0-6 $dollar-speed infinite linear; /* Fx 5+ */
+      -o-animation:      dollar-0-6 $dollar-speed infinite linear; /* Opera 12+ */
+      animation:         dollar-0-6 $dollar-speed infinite linear; /* IE 10+, Fx 29+ */
+    }
+
+    .dollar-4-10 {
+      @include animationLine(dollar-4-10, 2900, 2348, 800, 1426);
+
+      $dollar-speed: 2293.5 / 1000 * $dollar-speed;
+
+      -webkit-animation: dollar-4-10 $dollar-speed infinite linear; /* Safari 4+ */
+      -moz-animation:    dollar-4-10 $dollar-speed infinite linear; /* Fx 5+ */
+      -o-animation:      dollar-4-10 $dollar-speed infinite linear; /* Opera 12+ */
+      animation:         dollar-4-10 $dollar-speed infinite linear; /* IE 10+, Fx 29+ */
+    }
+
+    .dollar-8-2 {
+      @include animationLine(dollar-8-2, 800, 2288, 2900, 1368);
+
+      $dollar-speed: 2293.5 / 1000 * $dollar-speed;
+
+      -webkit-animation: dollar-8-2 $dollar-speed infinite linear; /* Safari 4+ */
+      -moz-animation:    dollar-8-2 $dollar-speed infinite linear; /* Fx 5+ */
+      -o-animation:      dollar-8-2 $dollar-speed infinite linear; /* Opera 12+ */
+      animation:         dollar-8-2 $dollar-speed infinite linear; /* IE 10+, Fx 29+ */
+    }
+  }
+
+  .lamp {
+    opacity: 0;
+    fill: yellow;
+
+    @include animationOpacity(lamp);
+
+    $dollar-speed: 2293.5 / 1000 * $dollar-speed;
+
+    -webkit-animation: lamp 3s infinite linear; /* Safari 4+ */
+    -moz-animation:    lamp 3s infinite linear; /* Fx 5+ */
+    -o-animation:      lamp 3s infinite linear; /* Opera 12+ */
+    animation:         lamp 3s infinite linear; /* IE 10+, Fx 29+ */
+  }
+
+  .balloon {
+    opacity: 0;
+
+    @keyframes balloon {
+      0% {
+
+      }
+      12.5% {
+        transform: translate(0, 200px);
+        opacity: 0;
+      }
+      18.5% {
+        opacity: 1;
+      }
+
+      81.5% {
+        opacity: 1;
+      }
+      87.5% {
+        transform: translate(3251px, 0);
+        opacity: 0;
+      }
+      100% {
+
+      }
+    }
+
+    @keyframes balloon1 {
+      0% {
+
+      }
+      25% {
+        transform: translate(0, 100px);
+        opacity: 0;
+      }
+      29% {
+        opacity: 1;
+      }
+
+      71% {
+        opacity: 1;
+      }
+      75% {
+        transform: translate(3251px, 0);
+        opacity: 0;
+      }
+      100% {
+
+      }
+    }
+
+    $balloon-speed: 20s;
+
+    -webkit-animation: balloon $balloon-speed infinite linear; /* Safari 4+ */
+    -moz-animation:    balloon $balloon-speed infinite linear; /* Fx 5+ */
+    -o-animation:      balloon $balloon-speed infinite linear; /* Opera 12+ */
+    animation:         balloon $balloon-speed infinite linear; /* IE 10+, Fx 29+ */
+  }
+
+  .drone {
+    opacity: 0;
+
+    @keyframes drone {
+      7% {
+        opacity: 0;
+        transform: translate(1000px, 0px);
+      }
+      10% {
+        opacity: 1;
+      }
+      25% {
+        transform: translate(1500px, 1000px);
+      }
+
+      40% {
+        opacity: 1;
+      }
+      43% {
+        transform: translate(2000px, 0px);
+        opacity: 0;
+      }
+      57% {
+        transform: translate(2000px, 0px);
+        opacity: 0;
+      }
+      60% {
+        opacity: 1;
+      }
+      75% {
+        transform: translate(2500px, 700px);
+      }
+      90% {
+        opacity: 1;
+      }
+      93% {
+        opacity: 0;
+        transform: translate(1000px, 0px);
+      }
+    }
+
+    @keyframes drone1 {
+      0% {
+
+      }
+      25% {
+        transform: translate(0, 100px);
+        opacity: 0;
+      }
+      29% {
+        opacity: 1;
+      }
+
+      71% {
+        opacity: 1;
+      }
+      75% {
+        transform: translate(3251px, 0);
+        opacity: 0;
+      }
+      100% {
+
+      }
+    }
+
+    @keyframes drone2 {
+      0% {
+
+      }
+      12.5% {
+        transform: translate(0, 400px);
+        opacity: 0;
+      }
+      18.5% {
+        opacity: 1;
+      }
+
+      81.5% {
+        opacity: 1;
+      }
+      87.5% {
+        transform: translate(3251px, 700px);
+        opacity: 0;
+      }
+      100% {
+
+      }
+    }
+
+    $drone-speed: 15s;
+
+    -webkit-animation: drone2 $drone-speed infinite linear -5s; /* Safari 4+ */
+    -moz-animation:    drone2 $drone-speed infinite linear -5s; /* Fx 5+ */
+    -o-animation:      drone2 $drone-speed infinite linear -5s; /* Opera 12+ */
+    animation:         drone2 $drone-speed infinite linear -5s; /* IE 10+, Fx 29+ */
+  }
+
+  .big-clouds {
+    $big-cloud-speed: 30s;
+
+    .big-cloud-1 {
+      opacity: 0;
+
+      @keyframes big-cloud-1 {
+        0% {
+
+        }
+        10% {
+          transform: translate(0, 50px);
+          opacity: 0;
+        }
+        20% {
+          opacity: 1;
+        }
+
+        80% {
+          opacity: 1;
+        }
+        90% {
+          transform: translate(3251px, 50px);
+          opacity: 0;
+        }
+        100% {
+
+        }
+      }
+
+      -webkit-animation: big-cloud-1 $big-cloud-speed infinite linear; /* Safari 4+ */
+      -moz-animation:    big-cloud-1 $big-cloud-speed infinite linear; /* Fx 5+ */
+      -o-animation:      big-cloud-1 $big-cloud-speed infinite linear; /* Opera 12+ */
+      animation:         big-cloud-1 $big-cloud-speed infinite linear; /* IE 10+, Fx 29+ */
+    }
+
+    .big-cloud-1-2 {
+      opacity: 0;
+
+      -webkit-animation: big-cloud-1 $big-cloud-speed infinite linear $big-cloud-speed/-2; /* Safari 4+ */
+      -moz-animation:    big-cloud-1 $big-cloud-speed infinite linear $big-cloud-speed/-2; /* Fx 5+ */
+      -o-animation:      big-cloud-1 $big-cloud-speed infinite linear $big-cloud-speed/-2; /* Opera 12+ */
+      animation:         big-cloud-1 $big-cloud-speed infinite linear $big-cloud-speed/-2; /* IE 10+, Fx 29+ */
+    }
+
+    .big-cloud-2 {
+      opacity: 0;
+
+      @keyframes big-cloud-2 {
+        0% {
+
+        }
+        10% {
+          transform: translate(0, 70px);
+          opacity: 0;
+        }
+        20% {
+          opacity: 1;
+        }
+
+        80% {
+          opacity: 1;
+        }
+        90% {
+          transform: translate(3251px, 70px);
+          opacity: 0;
+        }
+        100% {
+
+        }
+      }
+
+      -webkit-animation: big-cloud-2 $big-cloud-speed infinite linear $big-cloud-speed/-4; /* Safari 4+ */
+      -moz-animation:    big-cloud-2 $big-cloud-speed infinite linear $big-cloud-speed/-4; /* Fx 5+ */
+      -o-animation:      big-cloud-2 $big-cloud-speed infinite linear $big-cloud-speed/-4; /* Opera 102+ */
+      animation:         big-cloud-2 $big-cloud-speed infinite linear $big-cloud-speed/-4; /* IE 10+, Fx 29+ */
+    }
+
+    .big-cloud-2-2 {
+      opacity: 0;
+
+      -webkit-animation: big-cloud-2 $big-cloud-speed infinite linear $big-cloud-speed*3/-4; /* Safari 4+ */
+      -moz-animation:    big-cloud-2 $big-cloud-speed infinite linear $big-cloud-speed*3/-4; /* Fx 5+ */
+      -o-animation:      big-cloud-2 $big-cloud-speed infinite linear $big-cloud-speed*3/-4; /* Opera 202+ */
+      animation:         big-cloud-2 $big-cloud-speed infinite linear $big-cloud-speed*3/-4; /* IE 10+, Fx 29+ */
+    }
+  }
+
+  .small-clouds {
+    $small-cloud-speed: 40s;
+
+    .small-cloud-1 {
+      opacity: 0;
+
+      @keyframes small-cloud-1 {
+        0% {
+
+        }
+        10% {
+          transform: translate(0, 400px);
+          opacity: 0;
+        }
+        15% {
+          opacity: 1;
+        }
+
+        85% {
+          opacity: 1;
+        }
+        90% {
+          transform: translate(3251px, 400px);
+          opacity: 0;
+        }
+        100% {
+
+        }
+      }
+
+      -webkit-animation: small-cloud-1 $small-cloud-speed infinite linear; /* Safari 4+ */
+      -moz-animation:    small-cloud-1 $small-cloud-speed infinite linear; /* Fx 5+ */
+      -o-animation:      small-cloud-1 $small-cloud-speed infinite linear; /* Opera 12+ */
+      animation:         small-cloud-1 $small-cloud-speed infinite linear; /* IE 10+, Fx 29+ */
+    }
+
+    .small-cloud-2 {
+      opacity: 0;
+
+      @keyframes small-cloud-2 {
+        0% {
+
+        }
+        10% {
+          transform: translate(0, 300px);
+          opacity: 0;
+        }
+        15% {
+          opacity: 1;
+        }
+
+        85% {
+          opacity: 1;
+        }
+        90% {
+          transform: translate(3251px, 300px);
+          opacity: 0;
+        }
+        100% {
+
+        }
+      }
+
+      -webkit-animation: small-cloud-2 $small-cloud-speed infinite linear 10s; /* Safari 4+ */
+      -moz-animation:    small-cloud-2 $small-cloud-speed infinite linear 10s; /* Fx 5+ */
+      -o-animation:      small-cloud-2 $small-cloud-speed infinite linear 10s; /* Opera 12+ */
+      animation:         small-cloud-2 $small-cloud-speed infinite linear 10s; /* IE 10+, Fx 29+ */
+    }
+  }
+}
+
+
